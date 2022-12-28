@@ -29,7 +29,7 @@ export default function Header() {
     return (
         <Disclosure as="nav">
             {({ open }) => (
-                <div className="mx-auto max-w-7xl px-2 sm:px-6 sm:py-6 lg:px-30 lg:py-10">
+                <div className="mx-auto max-w-7xl px-2 sm:px-6 sm:py-6 lg:px-30 lg:py-10" id="homepage-section">
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                             {/* Mobile menu button*/}
