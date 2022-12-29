@@ -1,4 +1,4 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../logo.svg'
 import '../App.css';
@@ -9,10 +9,6 @@ const navigation = [
     { name: 'Experience', href: '#experience', current: false },
     { name: 'Contact', href: '#contact', current: false },
 ]
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function Header() {
     const handleClick = (anchor) => () => {
