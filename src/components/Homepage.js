@@ -1,3 +1,5 @@
+import flowers from '../flowers.webp'
+
 export default function Homepage() {
     return (
         <section>
@@ -9,7 +11,7 @@ export default function Homepage() {
                     <h1 className="font-bold tracking-widest text-xl xxs:text-4xl sm:text-7xl">
                         MARIA ANTICI.
                     </h1>
-                    <p className="text-md xxs:text-xl tracking-widest leading-7 italic">
+                    <p className="text-md xxs:text-xl tracking-widest leading-7 italic lg:pr-20">
                         I’m passionate about software development and I’m skilled in HTML, CSS, JavaScript, and React. I’m now looking for a junior dev position as I recently learned how to code by myself.
                     </p>
                     <div className="mt-8 flex gap-x-4 sm:justify-center sm:pt-10">
@@ -20,6 +22,9 @@ export default function Homepage() {
                             Check out my resume!
                         </a>
                     </div>
+                </div>
+                <div className='absolute top-52 right-32 xl:left-2/3 2xl:left-2/3 hidden lg:block 2xl:hidden flowers'>
+                    <img src={flowers} alt='minimalist flowers'></img>
                 </div>
             </div>
         </section>

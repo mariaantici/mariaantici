@@ -16,6 +16,12 @@ h1 {
     color: #282120;
 }
 
+.flowers {
+  transform: rotate(28deg);
+  width: 18%;
+  max-width: 280px;
+}
+
 .pageName {
     position: absolute;
     background-color: #282120;
@@ -70,24 +76,4 @@ h1 {
     opacity: 1;
     transform: translateX(+50%);
     box-shadow: 0 10px 20px rgb(40,33,32, 0.2);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-    0% { transform: rotate( 0.0deg) }
-    10% { transform: rotate(14.0deg) }
-    20% { transform: rotate(-14.0deg) }
-    30% { transform: rotate(14.0deg) }
-    40% { transform: rotate(-14.0deg) }
-    50% { transform: rotate(14.0deg) }
-    60% { transform: rotate( -14.0deg) }
-    70% { transform: rotate( 14.0deg) }
-    80% { transform: rotate( -14.0deg) }
-    90% { transform: rotate( 0.0deg) }
-   100% { transform: rotate( 360.0deg) }
 }
