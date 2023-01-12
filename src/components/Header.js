@@ -41,7 +41,7 @@ export default function Header() {
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="flex flex-shrink-0 items-center">
                                 <a href='#homepage' onClick={handleClick('homepage')}><img
-                                    className="hidden h-20 w-auto md:block App-logo"
+                                    className="hidden h-20 w-auto md:block"
                                     src={logo}
                                     alt="M with flowers logo"
                                 /></a>
