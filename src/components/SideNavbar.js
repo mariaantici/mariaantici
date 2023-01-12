@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCircle as faRegularCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCircle as faSolidCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 const sideNavbar = [
     { name: 'About', href: '#about', current: true },
@@ -30,7 +32,7 @@ export default function SideNavbar() {
                             href={item.href}
                             onClick={handleClick(item.name.toLowerCase)}
                             className='icon transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300 SideNavbarIcon'
-                            aria-current={item.current ? 'page' : undefined}><FontAwesomeIcon icon={faCircle} size="2x" /></a>
+                            aria-current={item.current ? 'page' : undefined}><div className="fa-hover-hidden"><FontAwesomeIcon icon={faRegularCircle} size="2x" /></div><div className="fa-hover-show"><FontAwesomeIcon icon={faSolidCircle} size="2x" /></div></a>
                             <span className="pageName">{item.name}</span></>
                     ))}
                 </div>
