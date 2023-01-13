@@ -1,29 +1,30 @@
-import { BoltIcon, DevicePhoneMobileIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSchool, faScaleBalanced, faBolt, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
 
 const features = [
     {
-        name: 'Academics',
+        name: 'History',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: GlobeAltIcon,
+            'The first 10 years of school I have been an ace in mathematics. At the age of 16 it has been replaced by informatics. Caught up a year of information in 6 hours.',
+        icon: faSchool,
+    },
+    {
+        name: 'Motivation',
+        description:
+            'When introduced to programming, the first thought that came to mind was: "I can teach a computer to do stuff for me?". I can confidently say I was hooked.',
+        icon: faBolt,
+    },
+    {
+        name: 'Balance',
+        description:
+            'School was always the main focus but... multiple European and World champion in karate for 13 years in a row. The following 3 I switched to teaching.',
+        icon: faScaleBalanced,
     },
     {
         name: 'Passions',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: ScaleIcon,
-    },
-    {
-        name: 'Interests',
-        description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: BoltIcon,
-    },
-    {
-        name: 'Yearnings',
-        description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: DevicePhoneMobileIcon,
+            'Painting. Reading. Cooking. Snowboarding. Skydiving. Karate. Overpriced coffee. Killing house plants as a sport.',
+        icon: faHeartPulse,
     },
 ]
 
@@ -34,8 +35,7 @@ export default function AboutSection() {
                 <div className="sm:text-center">
                     <p className="mt-2 text-3xl font-bold tracking-widest text-brown-black sm:text-4xl">About me</p>
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-brown-black tracking-wide italic">
-                        Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-                        accusamus quisquam.
+                        Hi, I am Maria, child of the internet. As a Gen Z I have been eating, sleeping and breathing technology kind of my whole life. Don't care about pronouns.
                     </p>
                 </div>
 
@@ -44,7 +44,7 @@ export default function AboutSection() {
                         {features.map((feature) => (
                             <div key={feature.name} className="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-brown-black/10 bg-milky-white text-brown-black sm:shrink-0">
-                                    <feature.icon className="h-8 w-8" aria-hidden="true" />
+                                    <FontAwesomeIcon icon={feature.icon} size="lg" />
                                 </div>
                                 <div className="sm:min-w-0 sm:flex-1">
                                     <p className="text-lg font-semibold leading-8 text-brown-black tracking-widest">{feature.name}</p>
