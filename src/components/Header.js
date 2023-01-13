@@ -53,7 +53,7 @@ export default function Header() {
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        onClick={handleClick(item.name.toLowerCase)}
+                                        onClick={handleClick(item.name.toLowerCase())}
                                         className='text-brown-black hover:ring-1 hover:ring-brown-black/20 px-4 py-2 rounded-3xl text-lg font-medium'
                                         aria-current={item.current ? 'page' : undefined}
                                     >
