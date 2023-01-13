@@ -1,4 +1,5 @@
 import flowers from '../flowers.webp'
+import Pdf from '../documents/Resume-Antici Maria.pdf'
 
 export default function Homepage() {
     return (
@@ -16,7 +17,9 @@ export default function Homepage() {
                     </p>
                     <div className="mt-8 flex gap-x-4 sm:justify-center sm:pt-10">
                         <a
-                            href="#resume"
+                            href={Pdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block rounded-3xl px-4 py-3 text-base font-semibold leading-7 ring-1 ring-brown-black/10 hover:ring-brown-black/30 tracking-widest text-sm xxs:text-xl"
                         >
                             Check out my resume!
