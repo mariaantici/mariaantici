@@ -94,3 +94,12 @@ h1 {
 .vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--work .vertical-timeline-element-icon {
   box-shadow: 0 0 0 4px rgba(40, 33, 32, 0.8), inset 0 2px 0 rgba(40, 33, 32, 0.08), 0 3px 0 4px rgba(40, 33, 32, 0.05);
 }
+
+.contact {
+  background: rgba(40, 33, 32, 0.05); 
+  backdrop-filter: blur(30px);
+}
+
+.contactPic {
+  max-width: 400px;
+}
