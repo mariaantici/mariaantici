@@ -5,7 +5,7 @@ export default function Homepage() {
     return (
         <section>
             <div className="relative">
-                <div className="mx-auto max-w-3xl pt-10 xs:pt-32 pb-48 px-10 text-brown-black text-left space-y-8 xxs:space-y-11">
+                <div className="mx-auto max-w-3xl pt-10 xs:pt-32 pb-28 px-10 text-brown-black text-left space-y-8 xxs:space-y-11">
                     <p className="text-md xxs:text-xl tracking-widest">
                         Hi, my name is
                     </p>
