@@ -1,5 +1,6 @@
-import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Menu, Transition } from '@headlessui/react'
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../logo.svg'
 import '../App.css';
 
@@ -23,48 +24,72 @@ export default function Header() {
     };
 
     return (
-        <Disclosure as="nav">
-            {({ open }) => (
-                <div className="mx-auto max-w-7xl px-2 sm:px-6 sm:py-6 lg:px-30 lg:py-10" id="homepage-section">
-                    <div className="relative flex h-16 items-center justify-between">
-                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                            {/* Mobile menu button*/}
-                            <Disclosure.Button className="inline-flex items-center justify-center rounded-3xl p-4 text-brown-black hover:bg-brown-black/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                <span className="sr-only">Open main menu</span>
-                                {open ? (
-                                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                                ) : (
-                                    <Bars3Icon className="block h-10 w-10" aria-hidden="true" />
-                                )}
-                            </Disclosure.Button>
-                        </div>
-                        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                            <div className="flex flex-shrink-0 items-center">
-                                <a href='#homepage' onClick={handleClick('homepage')}><img
-                                    className="hidden h-20 w-auto md:block"
-                                    src={logo}
-                                    alt="M with flowers logo"
-                                /></a>
-                            </div>
-                        </div>
-                        <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-12">
-                                {navigation.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        onClick={handleClick(item.name.toLowerCase())}
-                                        className='text-brown-black hover:ring-1 hover:ring-brown-black/20 px-4 py-2 rounded-3xl text-lg font-medium'
-                                        aria-current={item.current ? 'page' : undefined}
+        <navigation>
+            <div className="mx-auto max-w-7xl px-2 sm:px-6 sm:py-6 lg:px-30 lg:py-10" id="homepage-section">
+                <div className="relative flex h-16 items-center justify-between">
+                    <div className="fixed top-10 left-10 sm:hidden z-[99999]">
+                        <Menu>
+                            {({ open }) => (
+                                <div className=''>
+                                    <Menu.Button className='icon'>
+                                        {open ? (
+                                            <FontAwesomeIcon icon={faX} size='2x' />
+                                        ) : (
+                                            <FontAwesomeIcon icon={faBars} size='2x' />
+                                        )}
+                                    </Menu.Button>
+                                    <Transition
+                                        enter="transition duration-100 ease-out"
+                                        enterFrom="transform scale-95 opacity-0"
+                                        enterTo="transform scale-100 opacity-100"
+                                        leave="transition duration-75 ease-out"
+                                        leaveFrom="transform scale-100 opacity-100"
+                                        leaveTo="transform scale-95 opacity-0"
                                     >
-                                        {item.name}
-                                    </a>
-                                ))}
-                            </div>
+                                        <Menu.Items className='absolute left-0 mt-2 px-2 origin-top-right divide-y divide-brown-black/10 rounded-xl bg-milky-white shadow-lg ring-1 ring-brown-black ring-opacity-5'>
+                                            {navigation.map((item) => (
+                                                <Menu.Item
+                                                    as="a"
+                                                    key={item.href}
+                                                    href={item.href}
+                                                    onClick={handleClick(item.name.toLowerCase())}
+                                                    className="group flex w-full items-center px-2 py-2 text-lg px-1 py-1"
+                                                >
+                                                    {item.name}
+                                                </Menu.Item>
+                                            ))}
+                                        </Menu.Items>
+                                    </Transition>
+                                </div>
+                            )}
+                        </Menu>
+                    </div>
+                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div className="flex flex-shrink-0 items-center">
+                            <a href='#homepage' onClick={handleClick('homepage')}><img
+                                className="hidden h-20 w-auto md:block"
+                                src={logo}
+                                alt="M with flowers logo"
+                            /></a>
+                        </div>
+                    </div>
+                    <div className="hidden sm:ml-6 sm:block">
+                        <div className="flex space-x-12">
+                            {navigation.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    onClick={handleClick(item.name.toLowerCase())}
+                                    className='text-brown-black hover:ring-1 hover:ring-brown-black/20 px-4 py-2 rounded-3xl text-lg font-medium'
+                                    aria-current={item.current ? 'page' : undefined}
+                                >
+                                    {item.name}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
-            )}
-        </Disclosure>
+            </div>
+        </navigation>
     )
 }
