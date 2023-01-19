@@ -103,3 +103,11 @@ h1 {
 .contactPic {
   max-width: 400px;
 }
+
+.active > .fa-hover-show {
+  display: inline-block;
+}
+
+.active  > .fa-hover-hidden {
+  display: none;
+}

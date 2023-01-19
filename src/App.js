@@ -10,6 +10,28 @@ import SideNavbar from './components/SideNavbar';
 import Socials from './components/Socials';
 
 function App() {
+  const sections = document.querySelectorAll("section[id]");
+
+  window.addEventListener("scroll", sideNavbarHighlighter);
+
+  function sideNavbarHighlighter() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 100;
+      const sectionId = current.getAttribute("id");
+
+      if (
+        scrollY > sectionTop &&
+        scrollY <= sectionTop + sectionHeight
+      ) {
+        document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.add("active");
+      } else {
+        document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.remove("active");
+      }
+    });
+  }
   return (
     <>
       <Header />

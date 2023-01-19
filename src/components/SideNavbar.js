@@ -23,7 +23,7 @@ export default function SideNavbar() {
     };
 
     return (
-        <div className="fixed bottom-0 right-0 hidden sides:block">
+        <div className="fixed bottom-0 right-0 hidden sides:block sideNavbar">
             <div className="px-10 space-y-4">
                 <div className="flex flex-col space-y-4">
                     {sideNavbar.map((item) => (
