@@ -30,7 +30,7 @@ const features = [
 
 export default function AboutSection() {
     return (
-        <div className="py-20 px-4 sm:py-32 lg:py-40" id='about-section'>
+        <section className="py-20 px-4 sm:py-32 lg:py-40" id='about-section'>
             <div className="mx-auto max-w-7xl px-6 sides:px-24">
                 <div className="sm:text-center">
                     <p className="mt-2 text-3xl font-bold tracking-widest text-brown-black sm:text-4xl">About me</p>
@@ -55,6 +55,6 @@ export default function AboutSection() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

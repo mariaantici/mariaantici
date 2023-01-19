@@ -16,7 +16,7 @@ const timeline = [
 
 export default function ExperienceSection() {
     return (
-        <div className="py-20 px-10 sm:py-32 lg:py-20 sides:px-24 space-y-10 mt-20" id='experience-section'>
+        <section className="py-20 px-10 sm:py-32 lg:py-20 sides:px-24 space-y-10 mt-20" id='experience-section'>
             <p className="sm:text-center mt-2 text-3xl font-bold tracking-widest text-brown-black sm:text-4xl">Experience</p>
             <VerticalTimeline className='vertical-timeline-custom-line'>
                 {timeline.map((t, i) => {
@@ -41,6 +41,6 @@ export default function ExperienceSection() {
                     </VerticalTimelineElement>
                 })}
             </VerticalTimeline>
-        </div>
+        </section>
     );
 }
