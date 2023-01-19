@@ -8,30 +8,36 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import SideNavbar from './components/SideNavbar';
 import Socials from './components/Socials';
+import { useEffect } from 'react';
 
 function App() {
-  const sections = document.querySelectorAll("section[id]");
 
-  window.addEventListener("scroll", sideNavbarHighlighter);
+  useEffect(() => {
+    function handleScroll() {
+      const sections = document.querySelectorAll("section[id]");
+      let scrollY = window.pageYOffset;
 
-  function sideNavbarHighlighter() {
-    let scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute("id");
 
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 100;
-      const sectionId = current.getAttribute("id");
+        if (
+          scrollY > sectionTop &&
+          scrollY <= sectionTop + sectionHeight
+        ) {
+          document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.add("active");
+        } else {
+          document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.remove("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-      if (
-        scrollY > sectionTop &&
-        scrollY <= sectionTop + sectionHeight
-      ) {
-        document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.add("active");
-      } else {
-        document.querySelector(".sideNavbar a[href*=" + sectionId.split('-')[0] + "]").classList.remove("active");
-      }
-    });
-  }
   return (
     <>
       <Header />
