@@ -1,0 +1,100 @@
+.icon {
+    color: #282120;
+}
+
+.flowers {
+  transform: rotate(28deg);
+  width: 18%;
+  max-width: 280px;
+}
+
+.pageName {
+    position: absolute;
+    background-color: #282120;
+    color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 100px;
+    bottom: 40px; right: 40px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: 17px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.pageName::before {
+    position: absolute;
+    width: 15px; height: 15px;
+    background-color: #282120;
+    bottom: 20px; right: 20%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+      
+.SideNavbarIcon:hover + .pageName {
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 10px 20px rgb(40,33,32, 0.2);
+}
+
+.socialName {
+    position: absolute;
+    background-color: #282120;
+    color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 100px;
+    bottom: 40px; left: 40px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: 17px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.socialName::before {
+    position: absolute;
+    width: 15px; height: 15px;
+    background-color: #282120;
+    bottom: 20px; left: 20%;
+    transform: translate(+50%, +50%) rotate(45deg);
+  }
+      
+.socialIcon:hover + .socialName {
+    opacity: 1;
+    transform: translateX(+50%);
+    box-shadow: 0 10px 20px rgb(40,33,32, 0.2);
+}
+
+* > .fa-hover-show,
+*:hover > .fa-hover-hidden,
+*:focus > .fa-hover-hidden {
+  display: none;
+}
+*:focus > .fa-hover-show,
+*:hover > .fa-hover-show {
+  display: inline-block;
+}
+
+.vertical-timeline.vertical-timeline-custom-line::before {
+  background: rgba(40, 33, 32, 0.4);
+}
+
+.vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--work .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px rgba(40, 33, 32, 0.8), inset 0 2px 0 rgba(40, 33, 32, 0.08), 0 3px 0 4px rgba(40, 33, 32, 0.05);
+}
+
+.contact {
+  background: rgba(40, 33, 32, 0.05); 
+  backdrop-filter: blur(30px);
+}
+
+.contactPic {
+  max-width: 400px;
+}
+
+.active > .fa-hover-show {
+  display: inline-block;
+}
+
+.active  > .fa-hover-hidden {
+  display: none;
+}
