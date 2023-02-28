@@ -2,28 +2,11 @@ import { Menu, Transition } from '@headlessui/react';
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
-
-const navigation = [
-    { name: 'About', href: '#about', current: true },
-    { name: 'Projects', href: '#projects', current: false },
-    { name: 'Experience', href: '#experience', current: false },
-    { name: 'Contact', href: '#contact', current: false },
-];
+import { handleClick, NAV_ITEMS } from '@/utils/utils';
 
 export default function Header() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
-
-    const handleClick = (anchor) => () => {
-        const id = `${anchor}-section`;
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
-        }
-    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,7 +45,7 @@ export default function Header() {
                                         leaveTo="transform scale-95 opacity-0"
                                     >
                                         <Menu.Items className="absolute menu-button left-0 mt-2 px-2 origin-top-right divide-y divide-brown-black/10 rounded-xl bg-milky-white shadow-lg ring-1 ring-brown-black ring-opacity-5">
-                                            {navigation.map((item) => (
+                                            {NAV_ITEMS.map((item) => (
                                                 <Menu.Item
                                                     as="a"
                                                     key={item.href}
@@ -90,7 +73,7 @@ export default function Header() {
                     </div>
                     <div className="hidden sm:ml-6 sm:block">
                         <div className="flex space-x-12">
-                            {navigation.map((item) => (
+                            {NAV_ITEMS.map((item) => (
                                 <a
                                     key={item.name}
                                     href={item.href}

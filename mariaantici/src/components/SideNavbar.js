@@ -1,32 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle as faRegularCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCircle as faSolidCircle } from '@fortawesome/free-solid-svg-icons';
-
-
-const sideNavbar = [
-    { name: 'About', href: '#about', current: true },
-    { name: 'Projects', href: '#projects', current: false },
-    { name: 'Experience', href: '#experience', current: false },
-    { name: 'Contact', href: '#contact', current: false },
-]
+import { handleClick, NAV_ITEMS } from '@/utils/utils';
 
 export default function SideNavbar() {
-    const handleClick = (anchor) => () => {
-        const id = `${anchor}-section`;
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        }
-    };
-
     return (
         <div className="fixed bottom-0 right-0 hidden sides:block sideNavbar">
             <div className="px-10 space-y-4">
                 <div className="flex flex-col space-y-4">
-                    {sideNavbar.map((item) => (
+                    {NAV_ITEMS.map((item) => (
                         <><a
                             key={item.name}
                             href={item.href}
