@@ -61,7 +61,7 @@ export default function Header() {
                                         leaveFrom="transform scale-100 opacity-100"
                                         leaveTo="transform scale-95 opacity-0"
                                     >
-                                        <Menu.Items className="absolute left-0 mt-2 px-2 origin-top-right divide-y divide-brown-black/10 rounded-xl bg-milky-white shadow-lg ring-1 ring-brown-black ring-opacity-5">
+                                        <Menu.Items className="absolute menu-button left-0 mt-2 px-2 origin-top-right divide-y divide-brown-black/10 rounded-xl bg-milky-white shadow-lg ring-1 ring-brown-black ring-opacity-5">
                                             {navigation.map((item) => (
                                                 <Menu.Item
                                                     as="a"
