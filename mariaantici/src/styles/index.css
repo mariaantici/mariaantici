@@ -104,6 +104,6 @@
   display: none;
 }
 
-.menu-button:focus {
+.menu-focus:focus {
   outline: none;
 }

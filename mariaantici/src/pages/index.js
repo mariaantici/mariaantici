@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import TopNavbar from '@/components/TopNavbar'
 import Homepage from '@/components/Homepage'
 import AboutSection from '@/components/AboutSection'
 import ProjectsSection from '@/components/ProjectsSection'
@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <TopNavbar />
       <main>
         <Homepage />
         <AboutSection />
