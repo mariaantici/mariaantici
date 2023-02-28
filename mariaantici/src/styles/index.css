@@ -103,3 +103,7 @@
 .active  > .fa-hover-hidden {
   display: none;
 }
+
+.menu-button:focus {
+  outline: none;
+}

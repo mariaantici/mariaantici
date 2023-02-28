@@ -46,7 +46,7 @@ export default function Header() {
                         <Menu>
                             {({ open }) => (
                                 <div className="">
-                                    <Menu.Button className="icon px-4 py-3 rounded-3xl bg-milky-white ring-1 ring-brown-black ring-opacity-10">
+                                    <Menu.Button className="icon menu-button px-4 py-3 rounded-3xl bg-milky-white ring-1 ring-brown-black ring-opacity-10">
                                         {open ? (
                                             <FontAwesomeIcon icon={faX} size="2x" />
                                         ) : (
