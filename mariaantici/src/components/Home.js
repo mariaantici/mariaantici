@@ -1,4 +1,4 @@
-export default function Homepage() {
+export default function Home() {
     return (
         <section>
             <div className="relative">

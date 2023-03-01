@@ -1,5 +1,5 @@
 import TopNavbar from '@/components/TopNavbar'
-import Homepage from '@/components/Homepage'
+import Home from '@/components/Home'
 import AboutSection from '@/components/AboutSection'
 import ProjectsSection from '@/components/ProjectsSection'
 import ExperienceSection from '@/components/ExperienceSection'
@@ -9,7 +9,7 @@ import SideNavbar from '@/components/SideNavbar'
 import Socials from '@/components/Socials'
 import { useEffect } from 'react'
 
-export default function Home() {
+export default function Homepage() {
   useEffect(() => {
     function handleScroll() {
       const sections = document.querySelectorAll("section[id]");
@@ -40,7 +40,7 @@ export default function Home() {
     <>
       <TopNavbar />
       <main>
-        <Homepage />
+        <Home />
         <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
