@@ -1,4 +1,5 @@
-
+import H2 from "@/common/components/H2"
+import Section from "../common/components/Section"
 
 const projects = [{
     label: "Work in progress",
@@ -10,14 +11,14 @@ const projects = [{
 
 export default function ProjectsSection() {
     return (
-        <section className='pt-20 sm:pt-32 sm:pb-5 lg:pt-40 lg:pb-28 px-10 sm:px-14 sides:px-28' id='projects-section'>
-            <p className="sm:text-center text-3xl font-bold sm:text-4xl tracking-widest mb-20">Something I've built</p>
+        <Section className="lg:pt-44" id='projects-section'>
+            <H2 className="mb-10">Something I've built</H2>
             <div className="project-container space-y-28">
                 {projects.map((project, index) => (
                     <div className="project" key={index}>
                         <div className="project-content">
                             <div className="project-label">{project.label}</div>
-                            <h4 className="project-title">{project.title}</h4>
+                            <h3 className="project-title">{project.title}</h3>
                             <div className="project-details">
                                 <p>{project.details}</p>
                                 <ul>
@@ -33,7 +34,6 @@ export default function ProjectsSection() {
                     </div>
                 ))}
             </div>
-
-        </section>
-    );
+        </Section>
+    )
 }

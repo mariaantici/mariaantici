@@ -7,7 +7,7 @@ import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import SideNavbar from '@/components/SideNavbar'
 import Socials from '@/components/Socials'
-import { useEffect } from 'react'
+import { useEffect, Fragment } from 'react'
 
 export default function Homepage() {
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function Homepage() {
   }, []);
 
   return (
-    <>
+    <Fragment>
       <TopNavbar />
-      <main>
+      <main className='max-w-screen-2xl mx-auto'>
         <Home />
         <AboutSection />
         <ProjectsSection />
@@ -49,6 +49,6 @@ export default function Homepage() {
       <Footer />
       <Socials />
       <SideNavbar />
-    </>
+    </Fragment >
   )
 }
