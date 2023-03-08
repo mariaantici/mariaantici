@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import TopNavbar from '@/components/TopNavbar'
 import Home from '@/components/Home'
 import AboutSection from '@/components/AboutSection'
@@ -38,6 +39,9 @@ export default function Homepage() {
 
   return (
     <Fragment>
+      <Head>
+        <title>Maria Antici</title>
+      </Head>
       <TopNavbar />
       <main className='max-w-screen-2xl mx-auto'>
         <Home />
